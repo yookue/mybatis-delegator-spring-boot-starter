@@ -1,0 +1,7 @@
+# Mybatis Delegator for Spring Boot Starter
+# Copyright (c) 2020 Yookue Ltd. All rights reserved.
+# https://yookue.com
+
+org.springframework.boot.autoconfigure.EnableAutoConfiguration =\
+    org.mybatis.spring.boot.autoconfigure.MybatisLanguageDriverAutoConfiguration,\
+    com.yookue.springstarter.mybatisdelegator.config.MybatisDelegatorAutoConfiguration
