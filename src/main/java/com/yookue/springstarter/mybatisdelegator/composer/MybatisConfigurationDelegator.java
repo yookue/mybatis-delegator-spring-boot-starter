@@ -17,7 +17,7 @@
 package com.yookue.springstarter.mybatisdelegator.composer;
 
 
-import javax.annotation.Nonnull;
+import jakarta.annotation.Nonnull;
 import javax.sql.DataSource;
 import org.apache.ibatis.session.SqlSessionFactory;
 import org.mybatis.spring.SqlSessionTemplate;

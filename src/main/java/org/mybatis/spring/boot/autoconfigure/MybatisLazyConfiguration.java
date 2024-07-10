@@ -22,7 +22,6 @@ import java.util.List;
 import java.util.Set;
 import java.util.stream.Collectors;
 import java.util.stream.Stream;
-import javax.annotation.Nonnull;
 import javax.sql.DataSource;
 import org.apache.ibatis.mapping.DatabaseIdProvider;
 import org.apache.ibatis.plugin.Interceptor;
@@ -49,6 +48,7 @@ import org.springframework.util.CollectionUtils;
 import org.springframework.util.ObjectUtils;
 import org.springframework.util.StringUtils;
 import com.yookue.commonplexus.springutil.util.ClassPathWraps;
+import jakarta.annotation.Nonnull;
 
 
 /**
@@ -162,9 +162,13 @@ public class MybatisLazyConfiguration /*implements InitializingBean*/ {
     }
 
     private void applyConfiguration(@Nonnull SqlSessionFactoryBean factory, @Nonnull MybatisProperties properties) {
-        Configuration configuration = properties.getConfiguration();
-        if (configuration == null && !StringUtils.hasText(properties.getConfigLocation())) {
+        MybatisProperties.CoreConfiguration coreConfiguration = properties.getConfiguration();
+        Configuration configuration = null;
+        if (coreConfiguration != null || !StringUtils.hasText(properties.getConfigLocation())) {
             configuration = new Configuration();
+        }
+        if (configuration != null && coreConfiguration != null) {
+            coreConfiguration.applyTo(configuration);
         }
         if (configuration != null && !CollectionUtils.isEmpty(this.configurationCustomizers)) {
             for (ConfigurationCustomizer customizer : this.configurationCustomizers) {

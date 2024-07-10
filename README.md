@@ -31,7 +31,7 @@ Spring Boot application integrates `mybatis` quickly, to support several mybatis
 
 ## Requirement
 
-- jdk 1.8+
+- jdk 17+
 
 ## License
 
