@@ -22,7 +22,7 @@
 
     <groupId>com.yookue.springstarter</groupId>
     <artifactId>mybatis-delegator-spring-boot-starter</artifactId>
-    <version>3.3.1</version>
+    <version>3.3.2</version>
 
     <name>${project.artifactId}</name>
     <description>Mybatis Delegator for Spring Boot Starter</description>
@@ -47,12 +47,12 @@
         <project.build.resourceEncoding>${file.encoding}</project.build.resourceEncoding>
         <project.reporting.outputEncoding>${file.encoding}</project.reporting.outputEncoding>
 
-        <spring-boot.version>3.3.1</spring-boot.version>
+        <spring-boot.version>3.3.2</spring-boot.version>
 
         <mybatis.version>3.5.16</mybatis.version>
         <mybatis-spring.version>3.0.3</mybatis-spring.version>
         <mybatis-typehandlers-jsr310.version>1.0.2</mybatis-typehandlers-jsr310.version>
-        <plexus-spring-util.version>3.3.1.1</plexus-spring-util.version>
+        <plexus-spring-util.version>3.3.2</plexus-spring-util.version>
 
         <!-- shaded versions -->
         <mybatis-spring-boot-starter.version>3.0.3</mybatis-spring-boot-starter.version>
