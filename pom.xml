@@ -22,7 +22,7 @@
 
     <groupId>com.yookue.springstarter</groupId>
     <artifactId>mybatis-delegator-spring-boot-starter</artifactId>
-    <version>3.4.1</version>
+    <version>3.4.2</version>
 
     <name>${project.artifactId}</name>
     <description>Mybatis Delegator for Spring Boot Starter</description>
@@ -47,12 +47,12 @@
         <project.build.resourceEncoding>${file.encoding}</project.build.resourceEncoding>
         <project.reporting.outputEncoding>${file.encoding}</project.reporting.outputEncoding>
 
-        <spring-boot.version>3.4.1</spring-boot.version>
+        <spring-boot.version>3.4.2</spring-boot.version>
 
-        <mybatis.version>[3.5.17,)</mybatis.version>
-        <mybatis-spring.version>[3.0.4,)</mybatis-spring.version>
-        <mybatis-typehandlers-jsr310.version>[1.0.2,)</mybatis-typehandlers-jsr310.version>
-        <plexus-spring-util.version>3.4.1</plexus-spring-util.version>
+        <mybatis.version>3.5.19</mybatis.version>
+        <mybatis-spring.version>3.0.4</mybatis-spring.version>
+        <mybatis-typehandlers-jsr310.version>1.0.2</mybatis-typehandlers-jsr310.version>
+        <plexus-spring-util.version>3.4.2</plexus-spring-util.version>
 
         <!-- shaded versions -->
         <mybatis-spring-boot-starter.version>3.0.4</mybatis-spring-boot-starter.version>
@@ -66,7 +66,7 @@
         <maven-shade-plugin.version>3.6.0</maven-shade-plugin.version>
         <maven-source-plugin.version>3.3.1</maven-source-plugin.version>
         <maven-gpg-plugin.version>3.2.7</maven-gpg-plugin.version>
-        <central-publishing-maven-plugin.version>0.6.0</central-publishing-maven-plugin.version>
+        <central-publishing-maven-plugin.version>0.7.0</central-publishing-maven-plugin.version>
     </properties>
 
     <dependencyManagement>
@@ -320,10 +320,9 @@
                     <excludePackageNames>org.mybatis.*</excludePackageNames>
                     <links>
                         <!--
-                        <link>https://docs.spring.io/spring-boot/docs/current/api/</link>
+                        <link>https://docs.spring.io/spring-boot/docs/current/api</link>
                         -->
-                        <link>https://docs.spring.io/spring-framework/docs/current/javadoc-api/</link>
-                        <link>https://mybatis.org/mybatis-3/apidocs/</link>
+                        <link>https://docs.spring.io/spring-framework/docs/current/javadoc-api</link>
                     </links>
                     <taglets>
                         <taglet>
