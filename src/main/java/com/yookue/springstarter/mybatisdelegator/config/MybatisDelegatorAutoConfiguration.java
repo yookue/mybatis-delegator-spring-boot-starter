@@ -18,7 +18,6 @@ package com.yookue.springstarter.mybatisdelegator.config;
 
 
 import java.util.List;
-import jakarta.annotation.Nonnull;
 import javax.sql.DataSource;
 import org.apache.ibatis.mapping.DatabaseIdProvider;
 import org.apache.ibatis.plugin.Interceptor;
@@ -27,9 +26,9 @@ import org.apache.ibatis.session.SqlSession;
 import org.apache.ibatis.type.TypeHandler;
 import org.mybatis.spring.boot.autoconfigure.ConfigurationCustomizer;
 import org.springframework.beans.factory.ObjectProvider;
+import org.springframework.boot.autoconfigure.condition.ConditionalOnBooleanProperty;
 import org.springframework.boot.autoconfigure.condition.ConditionalOnClass;
 import org.springframework.boot.autoconfigure.condition.ConditionalOnMissingBean;
-import org.springframework.boot.autoconfigure.condition.ConditionalOnProperty;
 import org.springframework.boot.context.properties.EnableConfigurationProperties;
 import org.springframework.context.annotation.Bean;
 import org.springframework.context.annotation.Configuration;
@@ -38,6 +37,7 @@ import org.springframework.jdbc.core.JdbcOperations;
 import com.yookue.springstarter.mybatisdelegator.composer.MybatisConfigurationDelegator;
 import com.yookue.springstarter.mybatisdelegator.composer.impl.MybatisConfigurationDelegatorImpl;
 import com.yookue.springstarter.mybatisdelegator.property.MybatisDelegatorProperties;
+import jakarta.annotation.Nonnull;
 
 
 /**
@@ -47,7 +47,7 @@ import com.yookue.springstarter.mybatisdelegator.property.MybatisDelegatorProper
  * @see com.yookue.springstarter.mybatisdelegator.composer.MybatisConfigurationDelegator
  */
 @Configuration(proxyBeanMethods = false)
-@ConditionalOnProperty(prefix = MybatisDelegatorAutoConfiguration.PROPERTIES_PREFIX, name = "enabled", havingValue = "true", matchIfMissing = true)
+@ConditionalOnBooleanProperty(prefix = MybatisDelegatorAutoConfiguration.PROPERTIES_PREFIX, name = "enabled", matchIfMissing = true)
 @ConditionalOnClass(value = {DataSource.class, JdbcOperations.class, SqlSession.class})
 @EnableConfigurationProperties(value = MybatisDelegatorProperties.class)
 @SuppressWarnings({"rawtypes", "SpringFacetCodeInspection"})
