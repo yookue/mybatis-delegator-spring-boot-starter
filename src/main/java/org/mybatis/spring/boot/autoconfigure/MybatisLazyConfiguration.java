@@ -47,7 +47,7 @@ import org.springframework.util.Assert;
 import org.springframework.util.CollectionUtils;
 import org.springframework.util.ObjectUtils;
 import org.springframework.util.StringUtils;
-import com.yookue.commonplexus.springutil.util.ClassPathWraps;
+import cn.unikue.commonplexus.springutil.util.ClassPathWraps;
 import jakarta.annotation.Nonnull;
 
 
