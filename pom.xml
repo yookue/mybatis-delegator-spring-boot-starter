@@ -22,7 +22,7 @@
 
     <groupId>cn.unikue.springstarter</groupId>
     <artifactId>mybatis-delegator-spring-boot-starter</artifactId>
-    <version>3.5.5</version>
+    <version>3.5.14</version>
 
     <name>${project.artifactId}</name>
     <description>Unikue Mybatis Delegator for Spring Boot Starter</description>
@@ -47,18 +47,18 @@
         <project.build.resourceEncoding>${file.encoding}</project.build.resourceEncoding>
         <project.reporting.outputEncoding>${file.encoding}</project.reporting.outputEncoding>
 
-        <spring-boot.version>3.5.5</spring-boot.version>
+        <spring-boot.version>3.5.14</spring-boot.version>
 
         <mybatis.version>3.5.19</mybatis.version>
-        <mybatis-spring.version>3.0.5</mybatis-spring.version>
+        <mybatis-spring.version>4.0.0</mybatis-spring.version>
         <mybatis-typehandlers-jsr310.version>1.0.2</mybatis-typehandlers-jsr310.version>
-        <plexus-spring-util.version>3.5.5</plexus-spring-util.version>
+        <plexus-spring-util.version>3.5.14</plexus-spring-util.version>
 
         <!-- shaded versions -->
-        <mybatis-spring-boot-starter.version>3.0.5</mybatis-spring-boot-starter.version>
+        <mybatis-spring-boot-starter.version>4.0.1</mybatis-spring-boot-starter.version>
 
-        <javadoc-docent-maven-plugin.version>2.1.0</javadoc-docent-maven-plugin.version>
-        <maven-compiler-plugin.version>3.14.0</maven-compiler-plugin.version>
+        <javadoc-docent-maven-plugin.version>2.1.2</javadoc-docent-maven-plugin.version>
+        <maven-compiler-plugin.version>3.14.1</maven-compiler-plugin.version>
         <maven-install-plugin.version>3.1.4</maven-install-plugin.version>
         <maven-jar-plugin.version>3.4.2</maven-jar-plugin.version>
         <maven-javadoc-plugin.version>3.11.3</maven-javadoc-plugin.version>
@@ -66,7 +66,7 @@
         <maven-shade-plugin.version>3.6.0</maven-shade-plugin.version>
         <maven-source-plugin.version>3.3.1</maven-source-plugin.version>
         <maven-gpg-plugin.version>3.2.8</maven-gpg-plugin.version>
-        <central-publishing-maven-plugin.version>0.8.0</central-publishing-maven-plugin.version>
+        <central-publishing-maven-plugin.version>0.10.0</central-publishing-maven-plugin.version>
     </properties>
 
     <dependencyManagement>
@@ -273,6 +273,10 @@
                 <artifactId>maven-compiler-plugin</artifactId>
                 <version>${maven-compiler-plugin.version}</version>
                 <configuration>
+                    <compilerArgs>
+                        <arg>-parameters</arg>
+                        <arg>-Xlint:unchecked</arg>
+                    </compilerArgs>
                     <excludes>
                         <exclude>**/._*</exclude>
                     </excludes>
